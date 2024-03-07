@@ -6,23 +6,17 @@ const getPosts = async () => {
         if (response.status !== 404) {
 
             let listaDePosts = "<ul>";
-            // let etiquetaUl = document.createElement("ul")
 
-            // let li;
             for (const post of datos) {
                 listaDePosts += `<li><h4>${post.title}</h4><p>${post.body}</p></li>`
-                // li = document.createElement("li")
-                // li.innerHTML = `<h4>${post.title}</h4><p>${post.body}</p>`
-                // etiquetaUl.appendChild(li)
+
             }
+
             listaDePosts += "</ul>"
 
             let div = document.getElementById("post-data");
-            // div.appendChild(etiquetaUl)
             div.insertAdjacentHTML("beforeend", listaDePosts);
 
-            // let p = document.createElement(listaDePosts);
-            // div.appendChild(p);
         } else {
             throw new Error("Error 404")
         }
